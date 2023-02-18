@@ -7,12 +7,9 @@ const config = {
 }
 
 exports.dbConnection = () => {
+  mongoose.set('strictQuery', true);
   mongoose
-  .connect(config.connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
+  .connect(config.connectionString)
   .then(() => {
     console.log("DB connected succesfully");
   })
