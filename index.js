@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const { dbConnection, atlasInit } = require("./src/config/dbConfig");
 const cityRouter = require("./src/router/cities.router");
 const app = express();
+var Parse = require('parse/node');
 
 //middlewares
 app.use(cors());
@@ -14,6 +15,8 @@ app.use(bodyParser.json());
 dbConnection();
 //atlasPlugin.initialize(<options>);
 atlasInit();
+Parse.initialize("n71OygLkOAu8IwTbCBpJKqJa2sMnX3R1XmxOOxPf","Msh0hbTYKuRnaShbrMebZhReOoIInUjZjSRru47V"); 
+Parse.serverURL = 'https://parseapi.back4app.com/'
 
 //actual routes
 app.use(cityRouter);
