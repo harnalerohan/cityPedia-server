@@ -22,7 +22,7 @@ Parse.serverURL = 'https://parseapi.back4app.com/'
 app.use(cityRouter);
 
 //listener
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
   res.json({
